@@ -1,0 +1,29 @@
+<%- include("partials/heading"); -%>
+
+<div class="card login" style="width: 18rem;">
+  <img src="images/logo.png" alt="...">
+  <hr>
+  <div class="card-title">
+    Log in
+  </div>
+  <div class="card-body">
+    <form method="post" action="/login">
+      <div class="form-group">
+        <label>Username</label>
+        <input name="username" type="texr" class="form-control" placeholder="Username">
+      </div>
+      <div id="emailHelp" class="form-text">We'll never share your username with anyone else.</div>
+      <p></p>
+      <div class="form-group">
+        <label>Password</label>
+        <input name="password" type="password" class="form-control" placeholder="Password">
+      </div>
+      <div class="form-check">
+
+      </div>
+      <button type="submit" class="btn btn-primary">Log in</button>
+    </form>
+  </div>
+</div>
+
+<%- include("partials/footer"); -%>

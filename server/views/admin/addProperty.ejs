@@ -1,0 +1,126 @@
+<%- include("../partials/heading"); -%>
+<nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+  <div class="container">
+    <a class="navbar-brand" href="/admin">
+      <img src="images/logo.png" alt="..." height="125">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/logout" style="color: #C82333;">Log out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<hr>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+    <div class="container">
+      <h1 class="heading-left">Add a Property</h1>
+      <div id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/property" style="color: #fbbf0e;">Cancel</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="card">
+    <div class="card-body">
+      <form method="post" action="/add-property">
+        <div class="card-title">Property Details</div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Name</label>
+          <input required name="propertyTitle" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter name...">
+        </div>
+        <div class="form-group label-add-property">
+          <label for="exampleFormControlInput1">Location</label>
+          <input required name="propertyLocation" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter location...">
+        </div>
+        <div class="form-group label-add-property">
+          <label for="exampleFormControlInput1">Email</label>
+          <input required name="propertyEmail" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter location...">
+        </div>
+        <div class="form-group label-add-property">
+          <label for="exampleFormControlInput1">Facebook Page</label>
+          <input required name="propertyFacebookPage" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter location...">
+        </div>
+        <div class="form-group label-add-property">
+          <label for="exampleFormControlInput1">Instagram Profile</label>
+          <input required name="propertyInstagramProfile" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter location...">
+        </div>
+        <div class="form-group label-add-property">
+          <label for="exampleFormControlInput1">Twitter Profile</label>
+          <input required name="propertyTwitterProfile" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter location...">
+        </div>
+        <div class="form-group label-add-property">
+          <label for="exampleFormControlTextarea1">Property Description</label>
+          <textarea required name="propertyDescription" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="form-group label-add-property">
+          <label for="exampleFormControlSelect1">Use of Renewable Energy</label>
+          <select name="typeOfRenewableEnergy" class="form-control" id="exampleFormControlSelect1">
+            <option>None</option>
+            <option>Solar</option>
+            <option>Geothermal</option>
+            <option>Wind</option>
+          </select>
+        </div>
+        <div class="form-group label-add-property">
+          <label for="exampleFormControlSelect1">Water Conservation</label>
+          <select name="waterConservationMethod" class="form-control" id="exampleFormControlSelect1">
+            <option>None</option>
+            <option>Rainwater Harvesting System</option>
+            <option>Drought-tolerant Landscaping</option>
+          </select>
+        </div>
+        <div class="form-group label-add-property">
+          <label for="exampleFormControlSelect1">Hazard Level</label>
+          <select name="hazardLevel" class="form-control" id="exampleFormControlSelect1">
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+        </div>
+        
+        <div class="form-group label-add-property" style="margin-bottom: 1rem;">
+          <label for="exampleFormControlTextarea1">Hazard Description</label>
+          <textarea required name="hazardDescription" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="card-title">Manager Details</div>
+        <div class="form-group label-add-property">
+          <label for="exampleFormControlInput1">Name</label>
+          <input required name="managerName" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter name...">
+        </div>
+        <div class="form-group label-add-property">
+          <label for="exampleFormControlInput1">Email</label>
+          <input required name="managerEmail" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter email...">
+        </div>
+        <div class="form-group label-add-property">
+          <label for="exampleFormControlInput1">Telephone Number</label>
+          <input required name="managerTelNumber" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter tel number...">
+        </div>
+        <div class="form-group label-add-property">
+          <label for="exampleFormControlInput1">Mobile Number</label>
+          <input required name="managerMobileNumber" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter mobile number...">
+        </div>
+        <div class="form-group label-add-property">
+          <label for="exampleFormControlInput1">Address</label>
+          <input required name="managerAddress" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter address...">
+        </div>
+        <div class="form-check">
+
+        </div>
+        <button type="submit" class="btn btn-primary">Add Property</button>
+      </form>
+    </div>
+  </div>
+
+<%- include("../partials/footer"); -%>

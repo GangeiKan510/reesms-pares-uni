@@ -10,7 +10,8 @@ import loginRouter from './routes/Login.js';
 import registerRouter from './routes/Register.js';
 import adminRouter from './routes/Admin.js';
 import logoutRouter from './routes/Logout.js';
-import propertiesRouter from './routes/Properties.js';
+import propertyRouter from './routes/property/Properties.js';
+import addPropertyRouter from './routes/property/AddProperty.js';
 
 const app = express();
 const PORT = 5000;   
@@ -39,7 +40,9 @@ app.use('/login', loginRouter);
 
 app.use('/logout', logoutRouter);
 
-app.use('/properties', propertiesRouter);
+app.use('/property', propertyRouter);
+
+app.use('/add-property', addPropertyRouter);
 
 app.use('/admin', adminRouter);
 

@@ -9,7 +9,7 @@ get('/', (req, res) => {
 
     });
   } else {
-    res.send("You are not authorized to access this!");
+    res.redirect('/login');
   }
 }).post('/', (req, res) => {
 

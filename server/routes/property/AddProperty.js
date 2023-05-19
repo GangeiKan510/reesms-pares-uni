@@ -44,8 +44,6 @@ get('/', (req, res) => {
     })
 
   });
-
-  console.log(newProperty);
   
   newProperty.save();
 

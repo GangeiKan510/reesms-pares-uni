@@ -1,0 +1,134 @@
+<%- include("../partials/heading"); -%>
+<nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+  <div class="container">
+    <a class="navbar-brand" href="/admin">
+      <img src="/images/logo.png" alt="..." height="125">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/logout" style="color: #C82333;">Log out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<hr>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+    <div class="container">
+      <h1 class="heading-left">Edit Property for <%= results.name %> </h1>
+      <div id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/property/<%= results.name %>" style="color: #fbbf0e;">Cancel</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="card">
+    <div class="card-body">
+      <form method="post" action="/property/<%= results.name %>/edit">
+        <div class="card-title" style="font-weight: bold;
+        margin: auto;
+        text-align: center;
+        display: flex;
+        justify-content: center;">Property Details</div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Name</label>
+          <input required value="<%= results.name %>" name="propertyTitle" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter name...">
+        </div>
+        <div class="form-group label-add-property">
+          <label for="exampleFormControlInput1">Location</label>
+          <input required value="<%= results.location %>" name="propertyLocation" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter location...">
+        </div>
+        <div class="form-group label-add-property">
+          <label for="exampleFormControlInput1">Email</label>
+          <input required value="<%= results.email %>" name="propertyEmail" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter location...">
+        </div>
+        <div class="form-group label-add-property">
+          <label for="exampleFormControlInput1">Facebook Page</label>
+          <input required value="<%= results.facebookPage %>" name="propertyFacebookPage" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter location...">
+        </div>
+        <div class="form-group label-add-property">
+          <label for="exampleFormControlInput1">Instagram Profile</label>
+          <input required value="<%= results.instagramProfile %>" name="propertyInstagramProfile" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter location...">
+        </div>
+        <div class="form-group label-add-property">
+          <label for="exampleFormControlInput1">Twitter Profile</label>
+          <input required value="<%= results.twitterProfile %>" name="propertyTwitterProfile" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter location...">
+        </div>
+        <div class="form-group label-add-property">
+          <label for="exampleFormControlTextarea1">Property Description</label>
+          <textarea required name="propertyDescription" class="form-control" id="exampleFormControlTextarea1" rows="3"><%= results.description %></textarea>
+        </div>
+        <div class="form-group label-add-property">
+          <label for="exampleFormControlSelect1">Use of Renewable Energy</label>
+          <select name="typeOfRenewableEnergy" class="form-control" id="renewableEnergyUsed">
+            <option>None</option>
+            <option <% if (results.sustainabilityFeature.typeOfRenewableEnergy === 'Solar') { %>selected<% } %>>Solar</option>
+            <option <% if (results.sustainabilityFeature.typeOfRenewableEnergy === 'Geothermal') { %>selected<% } %>>Geothermal</option>
+            <option <% if (results.sustainabilityFeature.typeOfRenewableEnergy === 'Wind') { %>selected<% } %>>Wind</option>
+          </select>
+        </div>
+        <div class="form-group label-add-property">
+          <label for="exampleFormControlSelect1">Water Conservation</label>
+          <select name="waterConservationMethod" class="form-control" id="exampleFormControlSelect1">
+            <option>None</option>
+            <option <% if (results.sustainabilityFeature.waterConservationMethod === 'Rainwater Harvesting System') { %>selected<% } %>>Rainwater Harvesting System</option>
+            <option <% if (results.sustainabilityFeature.waterConservationMethod === 'Drought-tolerant Landscaping') { %>selected<% } %>>Drought-tolerant Landscaping</option>
+          </select>
+        </div>
+        <div class="form-group label-add-property">
+          <label for="exampleFormControlSelect1">Hazard Level</label>
+          <select name="hazardLevel" class="form-control" id="exampleFormControlSelect1">
+            <option <% if (results.sustainabilityFeature.hazardLevel === 0) { %>selected<% } %>>0</option>
+            <option <% if (results.sustainabilityFeature.hazardLevel === 1) { %>selected<% } %>>1</option>
+            <option <% if (results.sustainabilityFeature.hazardLevel === 2) { %>selected<% } %>>2</option>
+            <option <% if (results.sustainabilityFeature.hazardLevel === 3) { %>selected<% } %>>3</option>
+            <option <% if (results.sustainabilityFeature.hazardLevel === 4) { %>selected<% } %>>4</option>
+          </select>
+        </div>
+        
+        <div class="form-group label-add-property" style="margin-bottom: 1rem;">
+          <label for="exampleFormControlTextarea1">Hazard Description</label>
+          <textarea required name="hazardDescription" class="form-control" id="exampleFormControlTextarea1" rows="3"><%= results.sustainabilityFeature.hazardDescription %></textarea>
+        </div>
+        <div class="card-title" style="font-weight: bold;
+        margin: auto;
+        text-align: center;
+        display: flex;
+        justify-content: center;">Manager Details</div>
+        <div class="form-group label-add-property">
+          <label for="exampleFormControlInput1">Name</label>
+          <input required value="<%= results.manager.name %>" name="managerName" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter name...">
+        </div>
+        <div class="form-group label-add-property">
+          <label for="exampleFormControlInput1">Email</label>
+          <input required value="<%= results.manager.email %>" name="managerEmail" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter email...">
+        </div>
+        <div class="form-group label-add-property">
+          <label for="exampleFormControlInput1">Telephone Number</label>
+          <input required value="<%= results.manager.telNumber %>" name="managerTelNumber" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter tel number...">
+        </div>
+        <div class="form-group label-add-property">
+          <label for="exampleFormControlInput1">Mobile Number</label>
+          <input required value="<%= results.manager.mobileNumber %>" name="managerMobileNumber" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter mobile number...">
+        </div>
+        <div class="form-group label-add-property">
+          <label for="exampleFormControlInput1">Address</label>
+          <input required value="<%= results.manager.address %>" name="managerAddress" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter address...">
+        </div>
+        <div class="form-check">
+
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Changes</button>
+      </form>
+    </div>
+  </div>
+
+<%- include("../partials/footer"); -%>

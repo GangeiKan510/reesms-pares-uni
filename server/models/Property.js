@@ -5,8 +5,8 @@ import { managerSchema } from "./Manager.js";
 
 const propertySchema = new mongoose.Schema({
 
-  name: {type: String, required: true, unique: true},
-  location: {type: String, required: true, unique: true},
+  name: {type: String, required: true},
+  location: {type: String, required: true},
   email: {type: String, required: true},
   facebookPage: {type: String, required: true},
   instagramProfile: {type: String, required: true},

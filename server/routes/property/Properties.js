@@ -32,8 +32,6 @@ router
       ] 
     })
     .then((result) => {
-      // Process the 'result' array containing the matching documents
-      console.log(result);
 
       res.render('admin/properties', {
         
@@ -91,7 +89,7 @@ router
 
     Property.find({ name: req.params.propertyName }).then((result) => {
       if (result) {
-        console.log(result);
+
         res.render('admin/editProperty', {
           results: result[0]
         })

@@ -10,9 +10,11 @@ router.
 get('/', (req, res) => {
   if (req.isAuthenticated()) {
     res.render('admin/admin', {
+
     });
   } else {
   res.render('login', {
+    
   });
 }}).post('/', (req, res) => {
   const user = new User({
